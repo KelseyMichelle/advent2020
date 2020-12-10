@@ -1,3 +1,5 @@
+mod adventday1;
+mod adventday2;
 fn main() {
-    println!("Hello, world!");
+    adventday2::advent2();
 }
