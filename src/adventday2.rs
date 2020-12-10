@@ -8,8 +8,8 @@ pub fn advent2() {
     let contents = fs::read_to_string(FILE_NAME)
         .expect("failed to read file");
     let contents = contents.split("\n");
-    let mut numcomply = 0;
-    let mut noncomply = 0;
+    let mut numcomplypt1 = 0;
+    let mut numcomplypt2 = 0;
     for p in contents {
         let b = p.trim().split(" ");
         let b = b.collect::<Vec<&str>>();
@@ -31,19 +31,7 @@ pub fn advent2() {
                 continue;
             },
         };
-        let word = b[2];
         let letters = b[2].split("");
-        // [part 1]
-        // let curr_len = b[1].len();
-        // let mut c = 0;
-        // for letter in letters {
-        //     if letter == curr_letter {c+=1;};
-            
-        // }
-        
-        // if c >= min && c <= max {
-        //     numcomply += 1;
-        //     println!("({}) {}: {} < {} < {}", numcomply,curr_letter, min, c, max);
 
         // [part 2]
         let min: usize = (min).try_into().unwrap();
@@ -52,11 +40,23 @@ pub fn advent2() {
         let minletter = letters[min];
         let maxletter = letters[max];
         if (minletter == curr_letter) ^ (maxletter == curr_letter) {
-            numcomply += 1;
-            println!("({}) {}: {}:{}, {}:{}, {}; {}", numcomply, curr_letter, min,minletter,  max, maxletter,numcomply,word);
+            numcomplypt2 += 1;
+        }
+
+        // [part 1]
+
+        let mut c = 0;
+        for letter in letters {
+            if letter == curr_letter {c+=1;};
+            
+        }
+        
+        if c >= min && c <= max {
+            numcomplypt1 += 1;
         }
 
     }
-    println!("compliant passwords: {}", numcomply)
+    println!("part 1 compliant passwords: {}", numcomplypt1);
+    println!("part 2 compliant passwords: {}", numcomplypt2);
 
 }

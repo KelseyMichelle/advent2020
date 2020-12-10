@@ -49,14 +49,3 @@ pub fn advent1() {
     }
 
 }
-
-// fn filter(a: &[u16], f: fn(u16) -> bool) -> Vec<&u16> {
-//     let mut output = Vec::new();
-
-//     for v in a {
-//         if f(*v) {
-//             output.push(v);
-//         }
-//     }
-//     output
-// }
