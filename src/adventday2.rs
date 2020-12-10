@@ -4,7 +4,7 @@ use std::convert::TryInto;
 pub fn advent2() {
     const FILE_NAME: &str = "input2";
 
-    println!("file: {}", FILE_NAME);
+    println!("[ Advent day 2 ]");
     let contents = fs::read_to_string(FILE_NAME)
         .expect("failed to read file");
     let contents = contents.split("\n");
@@ -58,5 +58,6 @@ pub fn advent2() {
     }
     println!("part 1 compliant passwords: {}", numcomplypt1);
     println!("part 2 compliant passwords: {}", numcomplypt2);
+    println!("");
 
 }
